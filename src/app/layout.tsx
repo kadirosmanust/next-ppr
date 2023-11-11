@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import './globals.css';
 import { GeistMono } from 'geist/font/mono';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'Next-PPR Design',
@@ -22,7 +23,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={GeistMono.variable}>{children}</body>
+      <body className={GeistMono.variable}>
+        <div className=" bg-black p-5 text-white ">
+          <div className=" rounded-lg bg-vc-border-gradient p-px shadow-lg shadow-black/30 ">
+            <div className=" rounded-lg bg-black p-4 ">
+              <Header />
+              {children}
+            </div>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }
